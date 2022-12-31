@@ -1,0 +1,25 @@
+.logo {
+  font-weight: 900;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Main Axis */
+  align-items: center; /* Cross Axis */
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navItem {
+  display: flex;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: var(--main-type-color);
+}

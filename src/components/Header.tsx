@@ -1,16 +1,19 @@
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
 import { routes } from "../App";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header>
-      <h1>Liam H.</h1>
-      <ul>
+    <header class={styles.header}>
+      <h1 class={styles.logo}>LIAM H.</h1>
+      <ul class={styles.nav}>
         <For each={routes}>
           {(route) => (
-            <li>
-              <A href={route.path}>{route.label}</A>
+            <li class={styles.navItem}>
+              <A href={route.path} activeClass="t-highlight" end={route.exact}>
+                {route.label}
+              </A>
             </li>
           )}
         </For>

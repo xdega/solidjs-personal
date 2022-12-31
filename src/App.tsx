@@ -8,7 +8,8 @@ const Portfolio = lazy(() => import("./pages/Portfolio"));
 import Header from "./components/Header";
 
 interface ApplicationRoute {
-  element: JSX.Element;
+  element?: JSX.Element;
+  component?: Component;
   path: string;
   label: string;
   exact: boolean;
@@ -19,21 +20,21 @@ interface ApplicationRoutes extends Array<ApplicationRoute> {}
 // source of truth for application routes
 const routes: ApplicationRoutes = [
   {
-    element: <Blog />,
+    component: Blog,
     path: "/",
-    label: "Blog",
+    label: "BLOG",
     exact: true,
   },
   {
-    element: <External />,
-    path: "/external",
-    label: "External Links",
+    component: Portfolio,
+    path: "/projects",
+    label: "PROJECTS",
     exact: false,
   },
   {
-    element: <Portfolio />,
-    path: "/portfolio",
-    label: "Portfolio",
+    component: External,
+    path: "/external",
+    label: "EXTERNAL LINKS",
     exact: false,
   },
 ];
@@ -41,12 +42,12 @@ const routes: ApplicationRoutes = [
 const App: Component = () => {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Routes>
         <For each={routes}>
           {(route) => (
             <Route
-              element={route.element}
+              component={route.component}
               path={route.path}
               {...{ end: route.exact }} // hacky, but wrapping this in an object to pass it through as boolean
             ></Route>
