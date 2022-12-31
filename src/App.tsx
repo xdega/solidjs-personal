@@ -22,19 +22,19 @@ const routes: ApplicationRoutes = [
   {
     component: Blog,
     path: "/",
-    label: "Blog",
+    label: "BLOG",
     exact: true,
+  },
+  {
+    component: Portfolio,
+    path: "/projects",
+    label: "PROJECTS",
+    exact: false,
   },
   {
     component: External,
     path: "/external",
-    label: "External Links",
-    exact: false,
-  },
-  {
-    component: Portfolio,
-    path: "/portfolio",
-    label: "Portfolio",
+    label: "EXTERNAL LINKS",
     exact: false,
   },
 ];

@@ -9,11 +9,16 @@ const Header = () => {
   };
   return (
     <header class={styles.header}>
-      <h1 class="t-highlight">Liam H.</h1>
+      <h1 class={styles.logo}>LIAM H.</h1>
       <ul class={styles.nav}>
         <For each={routes}>
           {(route, index) => (
-            <li classList={{ [styles.lastItem]: isLastItem(index()) }}>
+            <li
+              classList={{
+                [styles.lastItem]: isLastItem(index()),
+                [styles.navItem]: true,
+              }}
+            >
               <A href={route.path} activeClass="t-highlight" end={route.exact}>
                 {route.label}
               </A>
