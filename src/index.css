@@ -13,6 +13,7 @@ body {
   font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0px 35px 0px 35px;
 }
 
 a {
