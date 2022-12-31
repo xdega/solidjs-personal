@@ -4,21 +4,13 @@ import { routes } from "../App";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const isLastItem = (index: number) => {
-    return Boolean(index === routes.length - 1);
-  };
   return (
     <header class={styles.header}>
       <h1 class={styles.logo}>LIAM H.</h1>
       <ul class={styles.nav}>
         <For each={routes}>
-          {(route, index) => (
-            <li
-              classList={{
-                [styles.lastItem]: isLastItem(index()),
-                [styles.navItem]: true,
-              }}
-            >
+          {(route) => (
+            <li class={styles.navItem}>
               <A href={route.path} activeClass="t-highlight" end={route.exact}>
                 {route.label}
               </A>

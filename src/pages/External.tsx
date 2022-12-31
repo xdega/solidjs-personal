@@ -1,9 +1,7 @@
+import Content from "../components/Content";
+
 const External = () => {
-  return (
-    <div>
-      <p>External Links Page</p>
-    </div>
-  );
+  return <Content>EXTERNAL LINKS</Content>;
 };
 
 export default External;

@@ -1,9 +1,7 @@
+import Content from "../components/Content";
+
 const Portfolio = () => {
-  return (
-    <div>
-      <p>Portfolio Page Content</p>
-    </div>
-  );
+  return <Content>PROJECT PAGE</Content>;
 };
 
 export default Portfolio;
